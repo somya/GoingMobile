@@ -1,0 +1,273 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		688AC29691091EB782D3825E /* KittenViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 688ACAA57A443B89DDAC17C8 /* KittenViewCell.m */; };
+		EF1DAFC516164377004571E6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF1DAFC416164377004571E6 /* UIKit.framework */; };
+		EF1DAFC716164377004571E6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF1DAFC616164377004571E6 /* Foundation.framework */; };
+		EF1DAFC916164377004571E6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF1DAFC816164377004571E6 /* CoreGraphics.framework */; };
+		EF1DAFCF16164377004571E6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EF1DAFCD16164377004571E6 /* InfoPlist.strings */; };
+		EF1DAFD116164377004571E6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EF1DAFD016164377004571E6 /* main.m */; };
+		EF1DAFD516164377004571E6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EF1DAFD416164377004571E6 /* AppDelegate.m */; };
+		EF1DAFD816164377004571E6 /* KittenTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF1DAFD716164377004571E6 /* KittenTableViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		688ACAA57A443B89DDAC17C8 /* KittenViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KittenViewCell.m; sourceTree = "<group>"; };
+		688ACC1508505536B1F3DBFB /* KittenViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KittenViewCell.h; sourceTree = "<group>"; };
+		EF1DAFC016164377004571E6 /* KittenViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KittenViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF1DAFC416164377004571E6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		EF1DAFC616164377004571E6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		EF1DAFC816164377004571E6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		EF1DAFCC16164377004571E6 /* KittenViewer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KittenViewer-Info.plist"; sourceTree = "<group>"; };
+		EF1DAFCE16164377004571E6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		EF1DAFD016164377004571E6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EF1DAFD216164377004571E6 /* KittenViewer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KittenViewer-Prefix.pch"; sourceTree = "<group>"; };
+		EF1DAFD316164377004571E6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		EF1DAFD416164377004571E6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		EF1DAFD616164377004571E6 /* KittenTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KittenTableViewController.h; sourceTree = "<group>"; };
+		EF1DAFD716164377004571E6 /* KittenTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KittenTableViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EF1DAFBD16164377004571E6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF1DAFC516164377004571E6 /* UIKit.framework in Frameworks */,
+				EF1DAFC716164377004571E6 /* Foundation.framework in Frameworks */,
+				EF1DAFC916164377004571E6 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EF1DAFB516164376004571E6 = {
+			isa = PBXGroup;
+			children = (
+				EF1DAFCA16164377004571E6 /* KittenViewer */,
+				EF1DAFC316164377004571E6 /* Frameworks */,
+				EF1DAFC116164377004571E6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EF1DAFC116164377004571E6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EF1DAFC016164377004571E6 /* KittenViewer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EF1DAFC316164377004571E6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EF1DAFC416164377004571E6 /* UIKit.framework */,
+				EF1DAFC616164377004571E6 /* Foundation.framework */,
+				EF1DAFC816164377004571E6 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EF1DAFCA16164377004571E6 /* KittenViewer */ = {
+			isa = PBXGroup;
+			children = (
+				688ACC1508505536B1F3DBFB /* KittenViewCell.h */,
+				688ACAA57A443B89DDAC17C8 /* KittenViewCell.m */,
+				EF1DAFD316164377004571E6 /* AppDelegate.h */,
+				EF1DAFD416164377004571E6 /* AppDelegate.m */,
+				EF1DAFD616164377004571E6 /* KittenTableViewController.h */,
+				EF1DAFD716164377004571E6 /* KittenTableViewController.m */,
+				EF1DAFCB16164377004571E6 /* Supporting Files */,
+			);
+			path = KittenViewer;
+			sourceTree = "<group>";
+		};
+		EF1DAFCB16164377004571E6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EF1DAFCC16164377004571E6 /* KittenViewer-Info.plist */,
+				EF1DAFCD16164377004571E6 /* InfoPlist.strings */,
+				EF1DAFD016164377004571E6 /* main.m */,
+				EF1DAFD216164377004571E6 /* KittenViewer-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EF1DAFBF16164377004571E6 /* KittenViewer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF1DAFDE16164377004571E6 /* Build configuration list for PBXNativeTarget "KittenViewer" */;
+			buildPhases = (
+				EF1DAFBC16164377004571E6 /* Sources */,
+				EF1DAFBD16164377004571E6 /* Frameworks */,
+				EF1DAFBE16164377004571E6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KittenViewer;
+			productName = KittenViewer;
+			productReference = EF1DAFC016164377004571E6 /* KittenViewer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EF1DAFB716164376004571E6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = EF1DAFBA16164376004571E6 /* Build configuration list for PBXProject "KittenViewer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = EF1DAFB516164376004571E6;
+			productRefGroup = EF1DAFC116164377004571E6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EF1DAFBF16164377004571E6 /* KittenViewer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EF1DAFBE16164377004571E6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF1DAFCF16164377004571E6 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EF1DAFBC16164377004571E6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF1DAFD116164377004571E6 /* main.m in Sources */,
+				EF1DAFD516164377004571E6 /* AppDelegate.m in Sources */,
+				EF1DAFD816164377004571E6 /* KittenTableViewController.m in Sources */,
+				688AC29691091EB782D3825E /* KittenViewCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EF1DAFCD16164377004571E6 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EF1DAFCE16164377004571E6 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EF1DAFDC16164377004571E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		EF1DAFDD16164377004571E6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EF1DAFDF16164377004571E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KittenViewer/KittenViewer-Prefix.pch";
+				INFOPLIST_FILE = "KittenViewer/KittenViewer-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		EF1DAFE016164377004571E6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KittenViewer/KittenViewer-Prefix.pch";
+				INFOPLIST_FILE = "KittenViewer/KittenViewer-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EF1DAFBA16164376004571E6 /* Build configuration list for PBXProject "KittenViewer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF1DAFDC16164377004571E6 /* Debug */,
+				EF1DAFDD16164377004571E6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF1DAFDE16164377004571E6 /* Build configuration list for PBXNativeTarget "KittenViewer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF1DAFDF16164377004571E6 /* Debug */,
+				EF1DAFE016164377004571E6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EF1DAFB716164376004571E6 /* Project object */;
+}
