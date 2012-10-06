@@ -8,11 +8,13 @@
 
 @interface KittenViewCell : UITableViewCell
 {
-	UIImageView * m_kittenImageView;
-	NSString * m_url;
+	UIImageView *m_leftKittenImageView;
+	UIImageView *m_rightKittenImageView;
 }
-@property( nonatomic, retain ) UIImageView *kittenImageView;
-@property( nonatomic, copy ) NSString *url;
+@property( nonatomic, retain ) UIImageView *leftKittenImageView;
+@property( nonatomic, retain ) UIImageView *rightKittenImageView;
+
+- (void)loadImages;
 
 
 @end

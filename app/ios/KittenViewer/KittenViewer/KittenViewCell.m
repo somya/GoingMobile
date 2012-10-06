@@ -7,13 +7,13 @@
 #import "KittenViewCell.h"
 
 @implementation KittenViewCell
-@synthesize kittenImageView = m_kittenImageView;
-@synthesize url = m_url;
+@synthesize leftKittenImageView = m_leftKittenImageView;
+@synthesize rightKittenImageView = m_rightKittenImageView;
 
 - (void)dealloc
 {
-	[m_kittenImageView release];
-	[m_url release];
+	[m_leftKittenImageView release];
+	[m_rightKittenImageView release];
 	[super dealloc];
 }
 
@@ -22,11 +22,25 @@
 	self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
 	if ( self )
 	{
-		m_kittenImageView = [[UIImageView alloc] init];
-		[self.contentView addSubview:m_kittenImageView];
+		m_leftKittenImageView = [[UIImageView alloc] init];
+		[self.contentView addSubview:m_leftKittenImageView];
+
+		m_rightKittenImageView = [[UIImageView alloc] init];
+		[self.contentView addSubview:m_rightKittenImageView];
 	}
 
 	return self;
+}
+
+- (void)prepareForReuse
+{
+	[super prepareForReuse];
+	NSArray *temp = [NSArray arrayWithObjects:m_leftKittenImageView, m_rightKittenImageView, nil];
+
+	for ( UIImageView *uiImageView in temp )
+	{
+		uiImageView.image = nil;
+	}
 }
 
 - (void)layoutSubviews
@@ -34,25 +48,42 @@
 	[super layoutSubviews];
 
 	self.contentView.backgroundColor = [UIColor blackColor];
-
-	self.kittenImageView.frame = CGRectInset( self.contentView.bounds, 1, 1 );
+//	@"http://placekitten.com/g/310/200";
 }
 
-- (void)setUrl:(NSString *)url
+- (void)loadImages
 {
-	if ( m_url != url )
-	{
-		url = [url mutableCopy];
-		[m_url release];
-		m_url = url;
+//	CGFloat maxY = self.contentView.bounds.size.height;
+	CGFloat maxX = self.contentView.bounds.size.width;
+	CGRect left;
+	CGRect right;
+	u_int32_t random_width = 40 + (arc4random() % ((int) maxX - 80));
+	CGRectDivide( self.contentView.bounds, &left, &right, random_width, CGRectMinXEdge );
 
-		if ( m_url )
+	self.leftKittenImageView.frame = CGRectInset( left, 1, 1 );
+	self.rightKittenImageView.frame = CGRectInset( right, 1, 1 );
+
+	NSArray *temp = [NSArray arrayWithObjects:m_leftKittenImageView, m_rightKittenImageView, nil];
+
+	for ( UIImageView *uiImageView in temp )
+	{
+		NSString *url = [NSString stringWithFormat:@"http://placekitten.com/g/%d/%d",
+		                                           (int) uiImageView.bounds.size.width * 2,
+		                                           (int) uiImageView.bounds.size.height * 2];
+		NSLog( @"url = %@", url );
+
+//		dispatch_queue_t queue = dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0 );
+		dispatch_queue_t queue = dispatch_queue_create( [url cStringUsingEncoding:NSUTF8StringEncoding], 0 );
+		dispatch_async( queue, ^
 		{
-			NSURL *url1 = [NSURL URLWithString:m_url];
-			NSData *data = [NSData dataWithContentsOfURL:url1];
-			UIImage *image = [UIImage imageWithData:data];
-			m_kittenImageView.image = image;
-		}
+			UIImage *image =
+				[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:url]]];
+
+//			dispatch_async( dispatch_get_main_queue(), ^
+//			{
+			uiImageView.image = image;
+//			} );
+		} );
 	}
 }
 

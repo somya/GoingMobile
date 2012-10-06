@@ -19,6 +19,7 @@
 {
 	[super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+	self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
 - (void)viewDidUnload
@@ -29,12 +30,22 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-	return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+	return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
 	return @"Kittens";
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell
+	forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+
+	if ( [cell isKindOfClass:[KittenViewCell class]] )
+	{
+		[((KittenViewCell *) cell) loadImages];
+	};
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -59,14 +70,15 @@
 			initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"kittenCell"]
 			autorelease];
 	}
-	kittenViewCell.url = @"http://placekitten.com/g/310/200";
+
+//	[kittenViewCell loadImages];
 
 	return kittenViewCell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	return 200;
+	return 150 + (arc4random() % (int) 150);
 }
 
 //- (void)scrollViewDidScroll:(UIScrollView *)scrollView
