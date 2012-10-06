@@ -20,6 +20,7 @@
 	[super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 	self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+	self.tableView.rowHeight = 200;
 }
 
 - (void)viewDidUnload
@@ -71,25 +72,9 @@
 			autorelease];
 	}
 
-//	[kittenViewCell loadImages];
+
 
 	return kittenViewCell;
 }
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-	return 150 + (arc4random() % (int) 150);
-}
-
-//- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-//{
-//	[super scrollViewDidScroll:scrollView];
-//}
-//
-//- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
-//{
-//	[super scrollViewDidEndDecelerating:scrollView];
-//}
-
 
 @end

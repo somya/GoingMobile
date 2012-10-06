@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		688AC29691091EB782D3825E /* KittenViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 688ACAA57A443B89DDAC17C8 /* KittenViewCell.m */; };
+		688ACF2A57ABFEA9793F6B4C /* empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 688AC8777873142CC2CA3E13 /* empty.png */; };
 		EF1DAFC516164377004571E6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF1DAFC416164377004571E6 /* UIKit.framework */; };
 		EF1DAFC716164377004571E6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF1DAFC616164377004571E6 /* Foundation.framework */; };
 		EF1DAFC916164377004571E6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF1DAFC816164377004571E6 /* CoreGraphics.framework */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		688AC8777873142CC2CA3E13 /* empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = empty.png; sourceTree = "<group>"; };
 		688ACAA57A443B89DDAC17C8 /* KittenViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KittenViewCell.m; sourceTree = "<group>"; };
 		688ACC1508505536B1F3DBFB /* KittenViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KittenViewCell.h; sourceTree = "<group>"; };
 		EF1DAFC016164377004571E6 /* KittenViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KittenViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,12 +50,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		688AC7FC2ADBB31F3232EF4B /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				688AC8777873142CC2CA3E13 /* empty.png */,
+			);
+			path = Graphics;
+			sourceTree = "<group>";
+		};
 		EF1DAFB516164376004571E6 = {
 			isa = PBXGroup;
 			children = (
 				EF1DAFCA16164377004571E6 /* KittenViewer */,
 				EF1DAFC316164377004571E6 /* Frameworks */,
 				EF1DAFC116164377004571E6 /* Products */,
+				688AC7FC2ADBB31F3232EF4B /* Graphics */,
 			);
 			sourceTree = "<group>";
 		};
@@ -151,6 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF1DAFCF16164377004571E6 /* InfoPlist.strings in Resources */,
+				688ACF2A57ABFEA9793F6B4C /* empty.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
