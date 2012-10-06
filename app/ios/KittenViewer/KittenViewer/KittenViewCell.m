@@ -68,8 +68,8 @@
 	for ( UIImageView *uiImageView in temp )
 	{
 		NSString *url = [NSString stringWithFormat:@"http://placekitten.com/g/%d/%d",
-		                                           (int) uiImageView.bounds.size.width * 2,
-		                                           (int) uiImageView.bounds.size.height * 2];
+		                                           (int) uiImageView.bounds.size.width ,
+		                                           (int) uiImageView.bounds.size.height ];
 		NSLog( @"url = %@", url );
 
 //		dispatch_queue_t queue = dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0 );
