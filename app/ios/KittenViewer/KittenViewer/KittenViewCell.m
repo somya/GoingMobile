@@ -48,7 +48,7 @@
 	[super layoutSubviews];
 
 	self.contentView.backgroundColor = [UIColor blackColor];
-//	@"http://placekitten.com/g/310/200";
+
 }
 
 - (void)loadImages
@@ -67,23 +67,14 @@
 
 	for ( UIImageView *uiImageView in temp )
 	{
-		NSString *url = [NSString stringWithFormat:@"http://placekitten.com/g/%d/%d",
-		                                           (int) uiImageView.bounds.size.width ,
-		                                           (int) uiImageView.bounds.size.height ];
-		NSLog( @"url = %@", url );
+		NSString *url = [NSString stringWithFormat:@"http://lorempixel.com/g/%d/%d",
+		                                           (int) uiImageView.bounds.size.width,
+		                                           (int) uiImageView.bounds.size.height];
+//		NSLog( @"url = %@", url );
 
-//		dispatch_queue_t queue = dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0 );
-		dispatch_queue_t queue = dispatch_queue_create( [url cStringUsingEncoding:NSUTF8StringEncoding], 0 );
-		dispatch_async( queue, ^
-		{
-			UIImage *image =
-				[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:url]]];
-
-//			dispatch_async( dispatch_get_main_queue(), ^
-//			{
-			uiImageView.image = image;
-//			} );
-		} );
+		UIImage *image =
+			[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:url]]];
+		uiImageView.image = image;
 	}
 }
 
