@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		688AC0E2A9C33BE5D9243011 /* TaskManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 688ACAE0C1D0D386D88A0516 /* TaskManager.m */; };
 		688AC29691091EB782D3825E /* KittenViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 688ACAA57A443B89DDAC17C8 /* KittenViewCell.m */; };
+		688AC4AEBC0EBF1B9DDB29F8 /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = 688ACAD2145550EC1809C97A /* Task.m */; };
+		688ACFA6A92E2F7428098784 /* FetchImageTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 688AC35A2666558F13614D60 /* FetchImageTask.m */; };
 		EF1DAFC516164377004571E6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF1DAFC416164377004571E6 /* UIKit.framework */; };
 		EF1DAFC716164377004571E6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF1DAFC616164377004571E6 /* Foundation.framework */; };
 		EF1DAFC916164377004571E6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF1DAFC816164377004571E6 /* CoreGraphics.framework */; };
@@ -18,7 +21,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		688AC0CA65749712D5880FDE /* TaskManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskManager.h; sourceTree = "<group>"; };
+		688AC17FCA46264EDA62695D /* FetchImageTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FetchImageTask.h; sourceTree = "<group>"; };
+		688AC194DDD62CFEB1CC48A8 /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
+		688AC35A2666558F13614D60 /* FetchImageTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchImageTask.m; sourceTree = "<group>"; };
 		688ACAA57A443B89DDAC17C8 /* KittenViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KittenViewCell.m; sourceTree = "<group>"; };
+		688ACAD2145550EC1809C97A /* Task.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Task.m; sourceTree = "<group>"; };
+		688ACAE0C1D0D386D88A0516 /* TaskManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskManager.m; sourceTree = "<group>"; };
 		688ACC1508505536B1F3DBFB /* KittenViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KittenViewCell.h; sourceTree = "<group>"; };
 		EF1DAFC016164377004571E6 /* KittenViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KittenViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF1DAFC416164377004571E6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -78,6 +87,12 @@
 		EF1DAFCA16164377004571E6 /* KittenViewer */ = {
 			isa = PBXGroup;
 			children = (
+				688AC17FCA46264EDA62695D /* FetchImageTask.h */,
+				688AC35A2666558F13614D60 /* FetchImageTask.m */,
+				688AC194DDD62CFEB1CC48A8 /* Task.h */,
+				688ACAD2145550EC1809C97A /* Task.m */,
+				688AC0CA65749712D5880FDE /* TaskManager.h */,
+				688ACAE0C1D0D386D88A0516 /* TaskManager.m */,
 				688ACC1508505536B1F3DBFB /* KittenViewCell.h */,
 				688ACAA57A443B89DDAC17C8 /* KittenViewCell.m */,
 				EF1DAFD316164377004571E6 /* AppDelegate.h */,
@@ -165,6 +180,9 @@
 				EF1DAFD516164377004571E6 /* AppDelegate.m in Sources */,
 				EF1DAFD816164377004571E6 /* KittenTableViewController.m in Sources */,
 				688AC29691091EB782D3825E /* KittenViewCell.m in Sources */,
+				688AC0E2A9C33BE5D9243011 /* TaskManager.m in Sources */,
+				688AC4AEBC0EBF1B9DDB29F8 /* Task.m in Sources */,
+				688ACFA6A92E2F7428098784 /* FetchImageTask.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
