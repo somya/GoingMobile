@@ -67,10 +67,10 @@
 
 	for ( UIImageView *uiImageView in temp )
 	{
-		NSString *url = [NSString stringWithFormat:@"http://lorempixel.com/g/%d/%d",
-		                                           (int) uiImageView.bounds.size.width,
-		                                           (int) uiImageView.bounds.size.height];
-//		NSLog( @"url = %@", url );
+		NSString *url = [NSString stringWithFormat:@"http://placekitten.com/g/%d/%d",
+		                                           (int) uiImageView.bounds.size.width ,
+		                                           (int) uiImageView.bounds.size.height ];
+		NSLog( @"url = %@", url );
 
 		UIImage *image =
 			[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:url]]];
