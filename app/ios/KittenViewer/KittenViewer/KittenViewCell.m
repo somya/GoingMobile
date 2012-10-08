@@ -5,15 +5,24 @@
 
 
 #import "KittenViewCell.h"
+#import "TaskManager.h"
+#import "FetchImageTask.h"
+#include <libkern/OSAtomic.h>
 
 @implementation KittenViewCell
-@synthesize kittenImageView = m_kittenImageView;
-@synthesize url = m_url;
+@synthesize leftKittenImageView = m_leftKittenImageView;
+@synthesize rightKittenImageView = m_rightKittenImageView;
+@synthesize urlLeft = m_urlLeft;
+@synthesize urlRight = m_urlRight;
+
+int counter = 0;
 
 - (void)dealloc
 {
-	[m_kittenImageView release];
-	[m_url release];
+	[m_leftKittenImageView release];
+	[m_rightKittenImageView release];
+	[m_urlLeft release];
+	[m_urlRight release];
 	[super dealloc];
 }
 
@@ -22,11 +31,27 @@
 	self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
 	if ( self )
 	{
-		m_kittenImageView = [[UIImageView alloc] init];
-		[self.contentView addSubview:m_kittenImageView];
+		m_leftKittenImageView = [[UIImageView alloc] init];
+		m_leftKittenImageView.image = [UIImage imageNamed:@"empty.png"];
+		[self.contentView addSubview:m_leftKittenImageView];
+
+		m_rightKittenImageView = [[UIImageView alloc] init];
+		m_rightKittenImageView.image = [UIImage imageNamed:@"empty.png"];
+		[self.contentView addSubview:m_rightKittenImageView];
 	}
 
 	return self;
+}
+
+- (void)prepareForReuse
+{
+	[super prepareForReuse];
+	NSArray *temp = [NSArray arrayWithObjects:m_leftKittenImageView, m_rightKittenImageView, nil];
+
+	for ( UIImageView *uiImageView in temp )
+	{
+		uiImageView.image = [UIImage imageNamed:@"empty.png"];
+	}
 }
 
 - (void)layoutSubviews
@@ -34,26 +59,64 @@
 	[super layoutSubviews];
 
 	self.contentView.backgroundColor = [UIColor blackColor];
-
-	self.kittenImageView.frame = CGRectInset( self.contentView.bounds, 1, 1 );
 }
 
-- (void)setUrl:(NSString *)url
+- (void)loadImages
 {
-	if ( m_url != url )
-	{
-		url = [url mutableCopy];
-		[m_url release];
-		m_url = url;
+	CGFloat maxX = self.contentView.bounds.size.width;
+	CGRect left;
+	CGRect right;
+	u_int32_t random_width = 60 + (arc4random() % ((int) maxX - 120));
+	CGRectDivide( self.contentView.bounds, &left, &right, random_width, CGRectMinXEdge );
 
-		if ( m_url )
+	self.leftKittenImageView.frame = CGRectInset( left, 1, 1 );
+	self.rightKittenImageView.frame = CGRectInset( right, 1, 1 );
+
+	NSArray *temp = [NSArray arrayWithObjects:m_leftKittenImageView, m_rightKittenImageView, nil];
+
+	self.urlLeft = [NSString stringWithFormat:@"http://placekitten.com/%d/%d",
+	                                          (int) self.leftKittenImageView.bounds.size.width,
+	                                          (int) self.leftKittenImageView.bounds.size.height];
+
+	self.urlRight = [NSString stringWithFormat:@"http://placekitten.com/%d/%d",
+	                                           (int) self.rightKittenImageView.bounds.size.width,
+	                                           (int) self.rightKittenImageView.bounds.size.height];
+//	NSLog( @"urlLeft = %@", self.urlLeft );
+//	NSLog( @"urlRight = %@", self.urlRight );
+
+	FetchImageTask *leftTask = [[FetchImageTask alloc] initWithUrl:self.urlLeft];
+	leftTask.index = OSAtomicIncrement32( &counter );
+
+	leftTask.onComplete = ^( id o )
+	{
+		if ( [leftTask.url isEqualToString:self.urlLeft] )
 		{
-			NSURL *url1 = [NSURL URLWithString:m_url];
-			NSData *data = [NSData dataWithContentsOfURL:url1];
-			UIImage *image = [UIImage imageWithData:data];
-			m_kittenImageView.image = image;
+			self.leftKittenImageView.image = o;
 		}
-	}
+	};
+	leftTask.onError = ^( NSError *error )
+	{
+		NSLog( @"error = %@", error );
+	};
+	[TaskManager submitTask:leftTask];
+	[leftTask release];
+
+	FetchImageTask *rightTask = [[FetchImageTask alloc] initWithUrl:self.urlRight];
+	rightTask.index = OSAtomicIncrement32( &counter );
+
+	rightTask.onComplete = ^( id o )
+	{
+		if ( [rightTask.url isEqualToString:self.urlRight] )
+		{
+			self.rightKittenImageView.image = o;
+		}
+	};
+	rightTask.onError = ^( NSError *error )
+	{
+		NSLog( @"error = %@", error );
+	};
+	[TaskManager submitTask:rightTask];
+	[rightTask release];
 }
 
 

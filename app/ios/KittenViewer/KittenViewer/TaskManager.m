@@ -20,7 +20,7 @@ dispatch_semaphore_t dataSemaphore;
 	pendingTasks = [[NSMutableArray alloc] init];
 
 	int cpuCount = [[NSProcessInfo processInfo] processorCount];
-	MAX_THREADS = cpuCount * 2;
+	MAX_THREADS = 2;//cpuCount * 2;
 	jobSemaphore = dispatch_semaphore_create( MAX_THREADS );
 	dataSemaphore = dispatch_semaphore_create( 0 );
 
