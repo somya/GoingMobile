@@ -92,7 +92,7 @@ dispatch_semaphore_t dataSemaphore;
 				}
 				else
 				{
-					task.onSuccess( result );
+					task.onComplete( result );
 				}
 			} );
 		}

@@ -6,19 +6,19 @@
 
 #import <Foundation/Foundation.h>
 
-typedef void(^TaskOnSuccess)(id);
+typedef void(^TaskOnComplete)(id);
 typedef void(^TaskOnError)(NSError *);
 
 @interface Task : NSObject
 {
 	@private
-	TaskOnSuccess m_onSuccess;
+	TaskOnComplete m_onComplete;
 	TaskOnError m_onError;
 }
-@property( nonatomic, copy ) TaskOnSuccess onSuccess;
+@property( nonatomic, copy ) TaskOnComplete onComplete;
 @property( nonatomic, copy ) TaskOnError onError;
 
-- (id)initWithOnSuccess:(void (^)(id))onSuccess onError:(TaskOnError)onError;
+- (id)initWithOnComplete:(TaskOnComplete)onComplete onError:(TaskOnError)onError;
 
 
 - (id)run:(NSError **)error;

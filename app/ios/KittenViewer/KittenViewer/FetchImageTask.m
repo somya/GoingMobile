@@ -9,6 +9,22 @@
 @implementation FetchImageTask
 @synthesize url = m_url;
 
+- (id)initWithUrl:(NSString *)url
+{
+	self = [super init];
+	if ( self )
+	{
+		self.url = url;
+	}
+
+	return self;
+}
+
++ (id)objectWithUrl:(NSString *)url
+{
+	return [[[FetchImageTask alloc] initWithUrl:url] autorelease];
+}
+
 - (void)dealloc
 {
 	[m_url release];

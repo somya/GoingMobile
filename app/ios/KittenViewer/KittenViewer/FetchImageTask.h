@@ -13,5 +13,9 @@
 }
 @property( nonatomic, copy ) NSString *url;
 
+- (id)initWithUrl:(NSString *)url;
+
++ (id)objectWithUrl:(NSString *)url;
+
 
 @end

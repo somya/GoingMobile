@@ -7,21 +7,20 @@
 #import "Task.h"
 
 @implementation Task
-@synthesize onSuccess = m_onSuccess;
+@synthesize onComplete = m_onComplete;
 @synthesize onError = m_onError;
 
-- (id)initWithOnSuccess:(TaskOnSuccess)onSuccess onError:(TaskOnError)onError
+- (id)initWithOnComplete:(TaskOnComplete)onComplete onError:(TaskOnError)onError
 {
 	self = [super init];
 	if ( self )
 	{
-		self.onSuccess = onSuccess;
+		self.onComplete = onComplete;
 		self.onError = onError;
 	}
 
 	return self;
 }
-
 
 - (id)run:(NSError **)error
 {
@@ -30,7 +29,7 @@
 
 - (void)dealloc
 {
-	[m_onSuccess release];
+	[m_onComplete release];
 	[m_onError release];
 	[super dealloc];
 }
