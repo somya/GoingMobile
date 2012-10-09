@@ -8,6 +8,8 @@
 
 @class Task;
 
+extern NSUInteger KittenViewCellTaskCount;
+
 @interface KittenViewCell : UITableViewCell
 {
 	UIImageView *m_leftKittenImageView;

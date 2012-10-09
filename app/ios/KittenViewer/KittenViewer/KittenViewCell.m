@@ -18,6 +18,8 @@
 @synthesize leftTask = mLeftTask;
 @synthesize rightTask = mRightTask;
 
+NSUInteger KittenViewCellTaskCount = 0;
+
 
 int counter = 0;
 
@@ -107,13 +109,15 @@ int counter = 0;
 
 	leftTask.onComplete = ^( id o )
 	{
-		if ( [leftTask.url isEqualToString:self.urlLeft] )
-		{
-			self.leftKittenImageView.image = o;
+        OSAtomicIncrement32((int32_t *) &KittenViewCellTaskCount);
+        if ( [leftTask.url isEqualToString:self.urlLeft] )
+        {
+            self.leftKittenImageView.image = o;
 		}
 	};
 	leftTask.onError = ^( NSError *error, BOOL cancelled )
 	{
+        OSAtomicIncrement32((int32_t *) &KittenViewCellTaskCount);
         if (!cancelled) {
             NSLog( @"error = %@", error );
         }
@@ -127,6 +131,7 @@ int counter = 0;
 
 	rightTask.onComplete = ^( id o )
 	{
+        OSAtomicIncrement32((int32_t *) &KittenViewCellTaskCount);
 		if ( [rightTask.url isEqualToString:self.urlRight] )
 		{
 			self.rightKittenImageView.image = o;
@@ -134,6 +139,7 @@ int counter = 0;
 	};
 	rightTask.onError = ^( NSError *error, BOOL cancelled )
 	{
+        OSAtomicIncrement32((int32_t *) &KittenViewCellTaskCount);
         if (!cancelled) {
             NSLog( @"error = %@", error );
         }

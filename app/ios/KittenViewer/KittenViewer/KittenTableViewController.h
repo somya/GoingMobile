@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface KittenTableViewController : UITableViewController
+@interface KittenTableViewController : UITableViewController {
+    BOOL mRecordsTasks;
+    NSDate *mRecordStart;
+    NSUInteger mCountBeforeStart;
+}
+@property(nonatomic) BOOL recordsTasks;
+@property(nonatomic, retain) NSDate *recordStart;
+
 
 @end
