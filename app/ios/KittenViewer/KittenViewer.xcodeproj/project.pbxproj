@@ -16,6 +16,7 @@
 		688ACC8F751ED48652080DB6 /* BlockRunnerTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 688AC5642A4C017EBC004E2D /* BlockRunnerTask.m */; };
 		688ACD77EF065923DF4063CD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 688ACDCF12DE950C28A494BC /* InfoPlist.strings */; };
 		688ACFA6A92E2F7428098784 /* FetchImageTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 688AC35A2666558F13614D60 /* FetchImageTask.m */; };
+		D3BC86958CECBD2FCF9A4801 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3BC8A07CD3383E35939E96D /* CFNetwork.framework */; };
 		EF127B91162144BE00056BDE /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF127B90162144BE00056BDE /* SenTestingKit.framework */; };
 		EF127B92162144BE00056BDE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF1DAFC416164377004571E6 /* UIKit.framework */; };
 		EF127B93162144BE00056BDE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF1DAFC616164377004571E6 /* Foundation.framework */; };
@@ -49,6 +50,7 @@
 		688ACC1508505536B1F3DBFB /* KittenViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KittenViewCell.h; sourceTree = "<group>"; };
 		688ACE04478B4E0FB7D37602 /* KittenViewerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KittenViewerTest.m; sourceTree = "<group>"; };
 		688ACEAAB3F69F8C0551080D /* KittenViewerTest-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KittenViewerTest-Prefix.pch"; sourceTree = "<group>"; };
+		D3BC8A07CD3383E35939E96D /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		EF127B8F162144BE00056BDE /* KittenViewerTest.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KittenViewerTest.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF127B90162144BE00056BDE /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		EF1DAFC016164377004571E6 /* KittenViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KittenViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,6 +85,7 @@
 				EF1DAFC516164377004571E6 /* UIKit.framework in Frameworks */,
 				EF1DAFC716164377004571E6 /* Foundation.framework in Frameworks */,
 				EF1DAFC916164377004571E6 /* CoreGraphics.framework in Frameworks */,
+				D3BC86958CECBD2FCF9A4801 /* CFNetwork.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +134,7 @@
 				EF1DAFC616164377004571E6 /* Foundation.framework */,
 				EF1DAFC816164377004571E6 /* CoreGraphics.framework */,
 				EF127B90162144BE00056BDE /* SenTestingKit.framework */,
+				D3BC8A07CD3383E35939E96D /* CFNetwork.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

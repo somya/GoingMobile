@@ -14,103 +14,91 @@ dispatch_semaphore_t dataSemaphore;
 
 @implementation TaskManager
 
-+ (void)initialize
-{
-	NSLog( @"%s", sel_getName( _cmd ) );
-	pendingTasks = [[NSMutableArray alloc] init];
++ (void)initialize {
+    NSLog(@"%s", sel_getName(_cmd));
+    pendingTasks = [[NSMutableArray alloc] init];
 
-	int cpuCount = [[NSProcessInfo processInfo] processorCount];
-	MAX_THREADS = 2;//cpuCount * 2;
-	jobSemaphore = dispatch_semaphore_create( MAX_THREADS );
-	dataSemaphore = dispatch_semaphore_create( 0 );
+    int cpuCount = [[NSProcessInfo processInfo] processorCount];
+    MAX_THREADS = 2;//cpuCount * 2;
+    jobSemaphore = dispatch_semaphore_create(MAX_THREADS);
+    dataSemaphore = dispatch_semaphore_create(0);
 
-	cancel = NO;
+    cancel = NO;
 
-	for ( int j = 0; j < MAX_THREADS; j++ )
-	{
-		dispatch_queue_t queue =
-			dispatch_queue_create( [[NSString stringWithFormat:@"worker_%d", j] UTF8String], nil );
+    for (int j = 0; j < MAX_THREADS; j++) {
+        dispatch_queue_t queue =
+                dispatch_queue_create([[NSString stringWithFormat:@"worker_%d", j] UTF8String], nil);
 
-		dispatch_async( queue, ^
-		{
-			while ( true )
-			{
-				dispatch_semaphore_wait( dataSemaphore, DISPATCH_TIME_FOREVER );
-				dispatch_semaphore_wait( jobSemaphore, DISPATCH_TIME_FOREVER );
-				Task *task = nil;
-				if ( pendingTasks.count > 0 )
-				{
-					@synchronized ( pendingTasks )
-					{
-						if ( pendingTasks.count > 0 )
-						{
-							// LIFO queue
-							task = [pendingTasks lastObject];
-							[pendingTasks removeObject:task];
-						}
-					}
-				}
+        dispatch_async(queue, ^{
+            while (true) {
+                dispatch_semaphore_wait(dataSemaphore, DISPATCH_TIME_FOREVER);
+                dispatch_semaphore_wait(jobSemaphore, DISPATCH_TIME_FOREVER);
+                Task *task = nil;
+                if (pendingTasks.count > 0) {
+                    @synchronized (pendingTasks) {
+                        if (pendingTasks.count > 0) {
+                            // LIFO queue
+                            task = [pendingTasks lastObject];
+                            [pendingTasks removeObject:task];
+                        }
+                    }
+                }
 
-				if ( task )
-				{
-					[TaskManager runTask:task];
-				}
+                if (task) {
+                    [TaskManager runTask:task];
+                }
 
-				if ( cancel )
-				{
-					break;
-				}
-			}
-		} );
-	}
+                if (cancel) {
+                    break;
+                }
+            }
+        });
+    }
 }
 
-+ (void)submitTask:(Task *)task
-{
-	@synchronized ( pendingTasks )
-	{
-		[pendingTasks addObject:task];
-	}
-	dispatch_semaphore_signal( dataSemaphore );
++ (void)submitTask:(Task *)task {
+    @synchronized (pendingTasks) {
+        [pendingTasks addObject:task];
+    }
+    dispatch_semaphore_signal(dataSemaphore);
 }
 
-+ (void)runTask:(Task *)task
-{
++ (void)runTask:(Task *)task {
 
-	@autoreleasepool
-	{
-		@try
-		{
+    @autoreleasepool {
+        @try {
 
-			NSError *error = nil;
-			id result = [task run:&error];
-			dispatch_async( dispatch_get_main_queue(), ^
-			{
-				if ( error )
-				{
-					task.onError( result );
-				}
-				else
-				{
-					task.onComplete( result );
-				}
-			} );
-		}
-		@catch ( NSException *exception )
-		{
-			dispatch_async( dispatch_get_main_queue(), ^
-			{
-				NSError *error = [NSError errorWithDomain:@"" code:1
-					userInfo:[NSDictionary dictionaryWithObject:exception
-						forKey:NSLocalizedFailureReasonErrorKey]];
-				task.onError( error );
-			} );
-		}
-		@finally
-		{
-			dispatch_semaphore_signal( jobSemaphore );
-		}
-	}
+            NSError *error = nil;
+            id result = nil;
+            if (!task.isCancelled) {
+                result = [task run:&error];
+            }
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if (task.isCancelled) {
+                    task.onError(nil, YES);
+                } else {
+                    if (error) {
+                        task.onError(error, NO);
+                    }
+                    else {
+                        task.onComplete(result);
+                    }
+                }
+            });
+        }
+        @catch (NSException *exception) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                NSError *error = [NSError errorWithDomain:@"" code:1
+                                                 userInfo:[NSDictionary dictionaryWithObjectsAndKeys:
+                                                         exception, NSLocalizedFailureReasonErrorKey,
+                                                         @"exception caught",NSLocalizedDescriptionKey, nil]];
+                task.onError(error, task.isCancelled);
+            });
+        }
+        @finally {
+            dispatch_semaphore_signal(jobSemaphore);
+        }
+    }
 }
 
 

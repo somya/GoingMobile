@@ -7,6 +7,7 @@
 #import "KittenViewCell.h"
 #import "TaskManager.h"
 #import "FetchImageTask.h"
+#import "Task.h"
 #include <libkern/OSAtomic.h>
 
 @implementation KittenViewCell
@@ -14,16 +15,22 @@
 @synthesize rightKittenImageView = m_rightKittenImageView;
 @synthesize urlLeft = m_urlLeft;
 @synthesize urlRight = m_urlRight;
+@synthesize leftTask = mLeftTask;
+@synthesize rightTask = mRightTask;
+
 
 int counter = 0;
 
 - (void)dealloc
 {
+    [self cancelTasks];
 	[m_leftKittenImageView release];
 	[m_rightKittenImageView release];
 	[m_urlLeft release];
 	[m_urlRight release];
-	[super dealloc];
+    [mLeftTask release], mLeftTask = nil;
+    [mRightTask release], mRightTask = nil;
+    [super dealloc];
 }
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -46,12 +53,23 @@ int counter = 0;
 - (void)prepareForReuse
 {
 	[super prepareForReuse];
-	NSArray *temp = [NSArray arrayWithObjects:m_leftKittenImageView, m_rightKittenImageView, nil];
+    [self cancelTasks];
+
+    NSArray *temp = [NSArray arrayWithObjects:m_leftKittenImageView, m_rightKittenImageView, nil];
 
 	for ( UIImageView *uiImageView in temp )
 	{
 		uiImageView.image = [UIImage imageNamed:@"empty.png"];
 	}
+}
+
+- (void)cancelTasks {
+//    NSLog(@"CANCELLING TASKS FOR CELL: %@",self);
+    self.leftTask.cancelled = YES;
+    self.leftTask = nil;
+
+    self.rightTask.cancelled = YES;
+    self.rightTask = nil;
 }
 
 - (void)layoutSubviews
@@ -94,11 +112,14 @@ int counter = 0;
 			self.leftKittenImageView.image = o;
 		}
 	};
-	leftTask.onError = ^( NSError *error )
+	leftTask.onError = ^( NSError *error, BOOL cancelled )
 	{
-		NSLog( @"error = %@", error );
-	};
+        if (!cancelled) {
+            NSLog( @"error = %@", error );
+        }
+    };
 	[TaskManager submitTask:leftTask];
+    self.leftTask = leftTask;
 	[leftTask release];
 
 	FetchImageTask *rightTask = [[FetchImageTask alloc] initWithUrl:self.urlRight];
@@ -111,11 +132,14 @@ int counter = 0;
 			self.rightKittenImageView.image = o;
 		}
 	};
-	rightTask.onError = ^( NSError *error )
+	rightTask.onError = ^( NSError *error, BOOL cancelled )
 	{
-		NSLog( @"error = %@", error );
-	};
+        if (!cancelled) {
+            NSLog( @"error = %@", error );
+        }
+    };
 	[TaskManager submitTask:rightTask];
+    self.rightTask = rightTask;
 	[rightTask release];
 }
 
