@@ -67,16 +67,24 @@
 
 	for ( UIImageView *uiImageView in temp )
 	{
-		NSString *url = [NSString stringWithFormat:@"http://placekitten.com/g/%d/%d",
-		                                           (int) uiImageView.bounds.size.width* 2,
-		                                           (int) uiImageView.bounds.size.height*2];
+		NSString *url = [NSString stringWithFormat:@"http://placekitten.com/%d/%d",
+		                                           (int) uiImageView.bounds.size.width,
+		                                           (int) uiImageView.bounds.size.height];
 		NSLog( @"url = %@", url );
 
 		dispatch_queue_t queue = dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0 );
 		dispatch_async( queue, ^
 		{
-			UIImage *image =
-				[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:url]]];
+			NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:url]];
+			int i = 0;
+			while ( data.length == 0 && i < 10 )
+			{
+				data =
+					[NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@?image=%d",
+					                                                                              url,
+					                                                                              ++i]]];
+			}
+			UIImage *image = [UIImage imageWithData:data];
 
 			dispatch_async( dispatch_get_main_queue(), ^
 			{
