@@ -37,10 +37,12 @@
     if (self.url) {
         NSURL *url1 = [NSURL URLWithString:m_url];
         NSData *data = [self fetchDataForURL:url1 error:NULL]; //[NSData dataWithContentsOfURL:url1];
+//        NSData *data = [NSData dataWithContentsOfURL:url1];
 //        NSLog(@"[%i] fetched %i bytes from url: %@", self.index, data.length, self.url);
         int i = 0;
         while (![self isCancelled] && (!data || 0 == data.length) && (i < 10)) {
             NSString *backupUrl = [NSString stringWithFormat:@"%@?image=%d", m_url, ++i];
+//            data = [NSData dataWithContentsOfURL:url1];
             data = [self fetchDataForURL:url1 error:NULL];
 //            NSLog(@"BACKUP [%i] fetched %i bytes from url: %@", self.index, data.length, backupUrl);
         }
