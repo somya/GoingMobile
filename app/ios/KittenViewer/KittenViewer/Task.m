@@ -9,6 +9,7 @@
 @implementation Task
 @synthesize onComplete = m_onComplete;
 @synthesize onError = m_onError;
+@synthesize cancelled = mCancelled;
 
 
 - (id)initWithOnComplete:(TaskOnComplete)onComplete onError:(TaskOnError)onError
@@ -35,13 +36,6 @@
 	[super dealloc];
 }
 
-- (BOOL)isCancelled {
-    return mCancelled;
-}
-
-- (void)setCancelled:(BOOL)cancelled {
-    mCancelled = cancelled;
-}
 
 
 @end

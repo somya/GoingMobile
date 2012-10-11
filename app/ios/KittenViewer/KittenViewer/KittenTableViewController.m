@@ -87,19 +87,19 @@
 //============================================================================================================
 
 
-- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
-    if (self.recordsTasks) { // stop current
-        self.recordsTasks = NO;
-        NSTimeInterval elapsed = [[NSDate date] timeIntervalSinceDate:self.recordStart];
-        NSUInteger numTasks = KittenViewCellTaskCount - mCountBeforeStart;
-        NSLog(@"Run duration %f, tasks completed: %i, per second %f", elapsed, numTasks, ((double)numTasks / elapsed));
-    } else { // start new
-        NSLog(@"starting record....");
-        mCountBeforeStart = KittenViewCellTaskCount;
-        self.recordsTasks = YES;
-        self.recordStart = [NSDate date];
-    }
-}
+//- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+//    if (self.recordsTasks) { // stop current
+//        self.recordsTasks = NO;
+//        NSTimeInterval elapsed = [[NSDate date] timeIntervalSinceDate:self.recordStart];
+//        NSUInteger numTasks = KittenViewCellTaskCount - mCountBeforeStart;
+//        NSLog(@"Run duration %f, tasks completed: %i, per second %f", elapsed, numTasks, ((double)numTasks / elapsed));
+//    } else { // start new
+//        NSLog(@"starting record....");
+//        mCountBeforeStart = KittenViewCellTaskCount;
+//        self.recordsTasks = YES;
+//        self.recordStart = [NSDate date];
+//    }
+//}
 
 
 - (void)dealloc {

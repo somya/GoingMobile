@@ -16,17 +16,13 @@ typedef void(^TaskOnError)(NSError *, BOOL cancelled);
 	TaskOnError m_onError;
     BOOL mCancelled;
 }
+
 @property( nonatomic, copy ) TaskOnComplete onComplete;
 @property( nonatomic, copy ) TaskOnError onError;
 @property(getter=isCancelled) BOOL cancelled;
 
-
 - (id)initWithOnComplete:(TaskOnComplete)onComplete onError:(TaskOnError)onError;
-
-
 - (id)run:(NSError **)error;
-
-
 
 
 @end
