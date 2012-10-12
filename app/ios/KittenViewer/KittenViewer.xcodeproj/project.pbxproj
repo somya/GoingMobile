@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		688AC29691091EB782D3825E /* KittenViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 688ACAA57A443B89DDAC17C8 /* KittenViewCell.m */; };
+		688AC4E476D95654CE33BBD2 /* KittenImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 688AC3DC64EB91C3E8634990 /* KittenImageLoader.m */; };
 		EF1DAFC516164377004571E6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF1DAFC416164377004571E6 /* UIKit.framework */; };
 		EF1DAFC716164377004571E6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF1DAFC616164377004571E6 /* Foundation.framework */; };
 		EF1DAFC916164377004571E6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF1DAFC816164377004571E6 /* CoreGraphics.framework */; };
@@ -18,8 +19,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		688AC3DC64EB91C3E8634990 /* KittenImageLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KittenImageLoader.m; sourceTree = "<group>"; };
 		688ACAA57A443B89DDAC17C8 /* KittenViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KittenViewCell.m; sourceTree = "<group>"; };
 		688ACC1508505536B1F3DBFB /* KittenViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KittenViewCell.h; sourceTree = "<group>"; };
+		688ACE0FDCEBC5A611660061 /* KittenImageLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KittenImageLoader.h; sourceTree = "<group>"; };
 		EF1DAFC016164377004571E6 /* KittenViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KittenViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF1DAFC416164377004571E6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		EF1DAFC616164377004571E6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -85,6 +88,8 @@
 				EF1DAFD616164377004571E6 /* KittenTableViewController.h */,
 				EF1DAFD716164377004571E6 /* KittenTableViewController.m */,
 				EF1DAFCB16164377004571E6 /* Supporting Files */,
+				688AC3DC64EB91C3E8634990 /* KittenImageLoader.m */,
+				688ACE0FDCEBC5A611660061 /* KittenImageLoader.h */,
 			);
 			path = KittenViewer;
 			sourceTree = "<group>";
@@ -165,6 +170,7 @@
 				EF1DAFD516164377004571E6 /* AppDelegate.m in Sources */,
 				EF1DAFD816164377004571E6 /* KittenTableViewController.m in Sources */,
 				688AC29691091EB782D3825E /* KittenViewCell.m in Sources */,
+				688AC4E476D95654CE33BBD2 /* KittenImageLoader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
