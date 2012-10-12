@@ -5,6 +5,7 @@
 
 
 #import "KittenViewCell.h"
+#import "KittenImageLoader.h"
 
 @implementation KittenViewCell
 @synthesize leftKittenImageView = m_leftKittenImageView;
@@ -67,35 +68,52 @@
 	self.leftKittenImageView.frame = CGRectInset( left, 1, 1 );
 	self.rightKittenImageView.frame = CGRectInset( right, 1, 1 );
 
-	NSArray *temp = [NSArray arrayWithObjects:m_leftKittenImageView, m_rightKittenImageView, nil];
+	NSString *leftUrl = [NSString stringWithFormat:@"http://placekitten.com/%d/%d",
+	                                               (int) self.leftKittenImageView.bounds.size.width,
+	                                               (int) self.leftKittenImageView.bounds.size.height];
 
-	for ( UIImageView *uiImageView in temp )
+	self.leftUrl = leftUrl;
+	dispatch_queue_t queue = dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0 );
+	dispatch_async( queue, ^
 	{
-		NSString *url = [NSString stringWithFormat:@"http://placekitten.com/%d/%d",
-		                                           (int) uiImageView.bounds.size.width,
-		                                           (int) uiImageView.bounds.size.height];
-		NSLog( @"url = %@", url );
+		UIImage *image = [KittenImageLoader loadImageFromUrl:leftUrl];
 
-		dispatch_queue_t queue = dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0 );
-		dispatch_async( queue, ^
+		dispatch_async( dispatch_get_main_queue(), ^
 		{
-			NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:url]];
-			int i = 0;
-			while ( data.length == 0 && i < 10 )
+			if ( [self.leftUrl compare:leftUrl] == NSOrderedSame )
 			{
-				data =
-					[NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@?image=%d",
-					                                                                              url,
-					                                                                              ++i]]];
+				self.leftKittenImageView.image = image;
 			}
-			UIImage *image = [UIImage imageWithData:data];
-
-			dispatch_async( dispatch_get_main_queue(), ^
+			else
 			{
-				uiImageView.image = image;
-			} );
+				NSLog( @"leftUrl = %@, self.leftUrl = %@", leftUrl, self.leftUrl );
+			}
 		} );
-	}
+	} );
+
+	NSString *rightUrl = [NSString stringWithFormat:@"http://placekitten.com/%d/%d",
+	                                                (int) self.rightKittenImageView.bounds.size.width,
+	                                                (int) self.rightKittenImageView.bounds.size.height];
+	self.rightUrl = rightUrl;
+
+	queue = dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0 );
+	dispatch_async( queue, ^
+	{
+		UIImage *image = [KittenImageLoader loadImageFromUrl:rightUrl];
+
+		dispatch_async( dispatch_get_main_queue(), ^
+		{
+
+			if ( [self.rightUrl compare:rightUrl] == NSOrderedSame )
+			{
+				self.rightKittenImageView.image = image;
+			}
+			else
+			{
+				NSLog( @"rightUrl = %@, self.rightUrl = %@", rightUrl, self.rightUrl );
+			}
+		} );
+	} );
 }
 
 
