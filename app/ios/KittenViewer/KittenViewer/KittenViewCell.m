@@ -9,11 +9,15 @@
 @implementation KittenViewCell
 @synthesize leftKittenImageView = m_leftKittenImageView;
 @synthesize rightKittenImageView = m_rightKittenImageView;
+@synthesize leftUrl = m_leftUrl;
+@synthesize rightUrl = m_rightUrl;
 
 - (void)dealloc
 {
 	[m_leftKittenImageView release];
 	[m_rightKittenImageView release];
+	[m_leftUrl release];
+	[m_rightUrl release];
 	[super dealloc];
 }
 
