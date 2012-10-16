@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MemoryDemo</string>
+    <string name="random_image">Random Image</string>
+    <string name="go_forth">Go Forth</string>
+    <string name="go_back">Go Back</string>
+</resources>

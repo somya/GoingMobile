@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+    <Button android:id="@+id/btn_go_back"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/go_forth"
+            android:layout_alignParentBottom="true"/>
+    <ImageView android:id="@+id/img_main"
+               android:layout_width="fill_parent"
+               android:layout_height="fill_parent"
+               android:layout_gravity="center"
+               android:contentDescription="@string/random_image"
+               android:layout_above="@id/btn_go_back" />
+
+</RelativeLayout>
+
