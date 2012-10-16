@@ -2,10 +2,14 @@ package com.s3mobileapps.memorydemo;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+
+import java.util.Random;
 
 public class MainActivity extends Activity
 {
@@ -37,6 +41,11 @@ public class MainActivity extends Activity
     {
         super.onResume();
 
+        Random r = new Random(  );
 
+        String uriString = "http://lorempixel.com/320/200/people/" + r.nextInt( 10 );
+        Log.d( "MainActivity.onResume", "uriString = " + uriString );
+
+        m_mainImage.setImageURI( Uri.parse( uriString ) );
     }
 }
