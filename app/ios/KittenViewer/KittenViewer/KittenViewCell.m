@@ -75,12 +75,12 @@ int counter = 0;
 	NSArray *temp = [NSArray arrayWithObjects:m_leftKittenImageView, m_rightKittenImageView, nil];
 
 	self.urlLeft = [NSString stringWithFormat:@"http://placekitten.com/%d/%d",
-	                                          (int) self.leftKittenImageView.bounds.size.width * 4,
-	                                          (int) self.leftKittenImageView.bounds.size.height * 4];
+	                                          (int) self.leftKittenImageView.bounds.size.width ,
+	                                          (int) self.leftKittenImageView.bounds.size.height ];
 
 	self.urlRight = [NSString stringWithFormat:@"http://placekitten.com/%d/%d",
-	                                           (int) self.rightKittenImageView.bounds.size.width *4,
-	                                           (int) self.rightKittenImageView.bounds.size.height * 4];
+	                                           (int) self.rightKittenImageView.bounds.size.width ,
+	                                           (int) self.rightKittenImageView.bounds.size.height];
 //	NSLog( @"urlLeft = %@", self.urlLeft );
 //	NSLog( @"urlRight = %@", self.urlRight );
 
