@@ -14,14 +14,17 @@
 	NSData *data = [NSData dataWithContentsOfURL:url1];
 	NSLog( @"fetched %i bytes from url: %@", data.length, url );
 	int i = 0;
-	while ( 0 == data.length && i < 10 )
+	while ( 0 == data.length && i < 20 )
 	{
 
 		NSString *backupUrl = [NSString stringWithFormat:@"%@?image=%d", url, ++i];
 		data = [NSData dataWithContentsOfURL:[NSURL URLWithString:backupUrl]];
 		NSLog( @"fetched %i bytes from url: %@", data.length, backupUrl );
 	}
-	UIImage *image = [UIImage imageWithData:data];
-	return image;
+	if ( data.length > 0 )
+	{
+		return [UIImage imageWithData:data];
+	}
+	return nil;
 }
 @end
