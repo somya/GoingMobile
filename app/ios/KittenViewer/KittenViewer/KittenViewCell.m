@@ -91,7 +91,7 @@ int counter = 0;
 	{
 		if ( [leftTask.url isEqualToString:self.urlLeft] )
 		{
-			[UIView animateWithDuration:0.25 animations:^
+			[UIView animateWithDuration:0.3 animations:^
 			{
 				self.leftKittenImageView.alpha = 0.0;
 			} completion:^( BOOL finished )
@@ -118,7 +118,7 @@ int counter = 0;
 	{
 		if ( [rightTask.url isEqualToString:self.urlRight] )
 		{
-			[UIView animateWithDuration:0.5 animations:^
+			[UIView animateWithDuration:0.3 animations:^
 			{
 				self.rightKittenImageView.alpha = 0.0;
 			} completion:^( BOOL finished )
