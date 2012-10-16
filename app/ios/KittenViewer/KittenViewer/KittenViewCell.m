@@ -75,12 +75,12 @@ int counter = 0;
 	NSArray *temp = [NSArray arrayWithObjects:m_leftKittenImageView, m_rightKittenImageView, nil];
 
 	self.urlLeft = [NSString stringWithFormat:@"http://placekitten.com/%d/%d",
-	                                          (int) self.leftKittenImageView.bounds.size.width,
-	                                          (int) self.leftKittenImageView.bounds.size.height];
+	                                          (int) self.leftKittenImageView.bounds.size.width * 4,
+	                                          (int) self.leftKittenImageView.bounds.size.height * 4];
 
 	self.urlRight = [NSString stringWithFormat:@"http://placekitten.com/%d/%d",
-	                                           (int) self.rightKittenImageView.bounds.size.width,
-	                                           (int) self.rightKittenImageView.bounds.size.height];
+	                                           (int) self.rightKittenImageView.bounds.size.width *4,
+	                                           (int) self.rightKittenImageView.bounds.size.height * 4];
 //	NSLog( @"urlLeft = %@", self.urlLeft );
 //	NSLog( @"urlRight = %@", self.urlRight );
 
@@ -91,7 +91,17 @@ int counter = 0;
 	{
 		if ( [leftTask.url isEqualToString:self.urlLeft] )
 		{
-			self.leftKittenImageView.image = o;
+			[UIView animateWithDuration:0.25 animations:^
+			{
+				self.leftKittenImageView.alpha = 0.0;
+			} completion:^( BOOL finished )
+			{
+				self.leftKittenImageView.image = o;
+				[UIView animateWithDuration:0.5 animations:^
+				{
+					self.leftKittenImageView.alpha = 1.0;
+				}];
+			}];
 		}
 	};
 	leftTask.onError = ^( NSError *error )
@@ -108,7 +118,17 @@ int counter = 0;
 	{
 		if ( [rightTask.url isEqualToString:self.urlRight] )
 		{
-			self.rightKittenImageView.image = o;
+			[UIView animateWithDuration:0.5 animations:^
+			{
+				self.rightKittenImageView.alpha = 0.0;
+			} completion:^( BOOL finished )
+			{
+				self.rightKittenImageView.image = o;
+				[UIView animateWithDuration:0.5 animations:^
+				{
+					self.rightKittenImageView.alpha = 1.0;
+				}];
+			}];
 		}
 	};
 	rightTask.onError = ^( NSError *error )
