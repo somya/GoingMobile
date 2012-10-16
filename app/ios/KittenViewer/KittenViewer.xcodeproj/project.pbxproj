@@ -7,7 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		688AC0DEEA2DC88014FC46E4 /* TaskManagerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 688AC75322C60DD468D5BBEC /* TaskManagerTest.m */; };
+		688AC0E2A9C33BE5D9243011 /* TaskManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 688ACAE0C1D0D386D88A0516 /* TaskManager.m */; };
 		688AC29691091EB782D3825E /* KittenViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 688ACAA57A443B89DDAC17C8 /* KittenViewCell.m */; };
+		688AC4AEBC0EBF1B9DDB29F8 /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = 688ACAD2145550EC1809C97A /* Task.m */; };
+		688AC7095F1E9712DB434DEB /* KittenViewerTest-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 688AC9EA6F73BB8D1CE9D891 /* KittenViewerTest-Info.plist */; };
+		688ACC06D1C81AB4DCDAC140 /* KittenViewerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 688ACE04478B4E0FB7D37602 /* KittenViewerTest.m */; };
+		688ACC1D3E3F0F3526F63EDC /* CustomCacheDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 688ACE15146A4FFA4C150822 /* CustomCacheDelegate.m */; };
+		688ACC8F751ED48652080DB6 /* BlockRunnerTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 688AC5642A4C017EBC004E2D /* BlockRunnerTask.m */; };
+		688ACD77EF065923DF4063CD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 688ACDCF12DE950C28A494BC /* InfoPlist.strings */; };
+		688ACFA6A92E2F7428098784 /* FetchImageTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 688AC35A2666558F13614D60 /* FetchImageTask.m */; };
+		EF127B91162144BE00056BDE /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF127B90162144BE00056BDE /* SenTestingKit.framework */; };
+		EF127B92162144BE00056BDE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF1DAFC416164377004571E6 /* UIKit.framework */; };
+		EF127B93162144BE00056BDE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF1DAFC616164377004571E6 /* Foundation.framework */; };
+		EF127BAA162146EA00056BDE /* FetchImageTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 688AC35A2666558F13614D60 /* FetchImageTask.m */; };
+		EF127BAB162146EA00056BDE /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = 688ACAD2145550EC1809C97A /* Task.m */; };
+		EF127BAC162146EA00056BDE /* TaskManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 688ACAE0C1D0D386D88A0516 /* TaskManager.m */; };
 		EF1DAFC516164377004571E6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF1DAFC416164377004571E6 /* UIKit.framework */; };
 		EF1DAFC716164377004571E6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF1DAFC616164377004571E6 /* Foundation.framework */; };
 		EF1DAFC916164377004571E6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF1DAFC816164377004571E6 /* CoreGraphics.framework */; };
@@ -18,8 +33,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		688AC06B757AC130D805D84E /* en */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		688AC0CA65749712D5880FDE /* TaskManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskManager.h; sourceTree = "<group>"; };
+		688AC17FCA46264EDA62695D /* FetchImageTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FetchImageTask.h; sourceTree = "<group>"; };
+		688AC194DDD62CFEB1CC48A8 /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
+		688AC35A2666558F13614D60 /* FetchImageTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FetchImageTask.m; sourceTree = "<group>"; };
+		688AC5642A4C017EBC004E2D /* BlockRunnerTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockRunnerTask.m; sourceTree = "<group>"; };
+		688AC75322C60DD468D5BBEC /* TaskManagerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskManagerTest.m; sourceTree = "<group>"; };
+		688AC7835CB965902CC0C461 /* TaskManagerTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskManagerTest.h; sourceTree = "<group>"; };
+		688AC9E1946C0A7622E95CB1 /* CustomCacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCacheDelegate.h; sourceTree = "<group>"; };
+		688AC9EA6F73BB8D1CE9D891 /* KittenViewerTest-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = "KittenViewerTest-Info.plist"; sourceTree = "<group>"; };
 		688ACAA57A443B89DDAC17C8 /* KittenViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KittenViewCell.m; sourceTree = "<group>"; };
+		688ACAD2145550EC1809C97A /* Task.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Task.m; sourceTree = "<group>"; };
+		688ACAE0C1D0D386D88A0516 /* TaskManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskManager.m; sourceTree = "<group>"; };
+		688ACB1553C5C8E59C36087C /* BlockRunnerTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockRunnerTask.h; sourceTree = "<group>"; };
+		688ACB2CC9791DACE34E0AF2 /* KittenViewerTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KittenViewerTest.h; sourceTree = "<group>"; };
 		688ACC1508505536B1F3DBFB /* KittenViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KittenViewCell.h; sourceTree = "<group>"; };
+		688ACE04478B4E0FB7D37602 /* KittenViewerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KittenViewerTest.m; sourceTree = "<group>"; };
+		688ACE15146A4FFA4C150822 /* CustomCacheDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCacheDelegate.m; sourceTree = "<group>"; };
+		688ACEAAB3F69F8C0551080D /* KittenViewerTest-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KittenViewerTest-Prefix.pch"; sourceTree = "<group>"; };
+		EF127B8F162144BE00056BDE /* KittenViewerTest.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KittenViewerTest.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF127B90162144BE00056BDE /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		EF1DAFC016164377004571E6 /* KittenViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KittenViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF1DAFC416164377004571E6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		EF1DAFC616164377004571E6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -35,6 +69,16 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		EF127B8B162144BE00056BDE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF127B91162144BE00056BDE /* SenTestingKit.framework in Frameworks */,
+				EF127B92162144BE00056BDE /* UIKit.framework in Frameworks */,
+				EF127B93162144BE00056BDE /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EF1DAFBD16164377004571E6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -48,10 +92,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EF127B94162144BE00056BDE /* KittenViewerTest */ = {
+			isa = PBXGroup;
+			children = (
+				688ACB1553C5C8E59C36087C /* BlockRunnerTask.h */,
+				688AC5642A4C017EBC004E2D /* BlockRunnerTask.m */,
+				688AC7835CB965902CC0C461 /* TaskManagerTest.h */,
+				688AC75322C60DD468D5BBEC /* TaskManagerTest.m */,
+				688ACE04478B4E0FB7D37602 /* KittenViewerTest.m */,
+				688ACB2CC9791DACE34E0AF2 /* KittenViewerTest.h */,
+				688ACEAAB3F69F8C0551080D /* KittenViewerTest-Prefix.pch */,
+				688AC9EA6F73BB8D1CE9D891 /* KittenViewerTest-Info.plist */,
+				688ACDCF12DE950C28A494BC /* InfoPlist.strings */,
+			);
+			path = KittenViewerTest;
+			sourceTree = "<group>";
+		};
 		EF1DAFB516164376004571E6 = {
 			isa = PBXGroup;
 			children = (
 				EF1DAFCA16164377004571E6 /* KittenViewer */,
+				EF127B94162144BE00056BDE /* KittenViewerTest */,
 				EF1DAFC316164377004571E6 /* Frameworks */,
 				EF1DAFC116164377004571E6 /* Products */,
 			);
@@ -61,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				EF1DAFC016164377004571E6 /* KittenViewer.app */,
+				EF127B8F162144BE00056BDE /* KittenViewerTest.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -71,6 +133,7 @@
 				EF1DAFC416164377004571E6 /* UIKit.framework */,
 				EF1DAFC616164377004571E6 /* Foundation.framework */,
 				EF1DAFC816164377004571E6 /* CoreGraphics.framework */,
+				EF127B90162144BE00056BDE /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -78,6 +141,12 @@
 		EF1DAFCA16164377004571E6 /* KittenViewer */ = {
 			isa = PBXGroup;
 			children = (
+				688AC17FCA46264EDA62695D /* FetchImageTask.h */,
+				688AC35A2666558F13614D60 /* FetchImageTask.m */,
+				688AC194DDD62CFEB1CC48A8 /* Task.h */,
+				688ACAD2145550EC1809C97A /* Task.m */,
+				688AC0CA65749712D5880FDE /* TaskManager.h */,
+				688ACAE0C1D0D386D88A0516 /* TaskManager.m */,
 				688ACC1508505536B1F3DBFB /* KittenViewCell.h */,
 				688ACAA57A443B89DDAC17C8 /* KittenViewCell.m */,
 				EF1DAFD316164377004571E6 /* AppDelegate.h */,
@@ -85,6 +154,8 @@
 				EF1DAFD616164377004571E6 /* KittenTableViewController.h */,
 				EF1DAFD716164377004571E6 /* KittenTableViewController.m */,
 				EF1DAFCB16164377004571E6 /* Supporting Files */,
+				688ACE15146A4FFA4C150822 /* CustomCacheDelegate.m */,
+				688AC9E1946C0A7622E95CB1 /* CustomCacheDelegate.h */,
 			);
 			path = KittenViewer;
 			sourceTree = "<group>";
@@ -103,6 +174,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		EF127B8E162144BE00056BDE /* KittenViewerTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF127BA0162144BE00056BDE /* Build configuration list for PBXNativeTarget "KittenViewerTest" */;
+			buildPhases = (
+				EF127B8A162144BE00056BDE /* Sources */,
+				EF127B8B162144BE00056BDE /* Frameworks */,
+				EF127B8C162144BE00056BDE /* Resources */,
+				EF127B8D162144BE00056BDE /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KittenViewerTest;
+			productName = KittenViewerTest;
+			productReference = EF127B8F162144BE00056BDE /* KittenViewerTest.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
 		EF1DAFBF16164377004571E6 /* KittenViewer */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EF1DAFDE16164377004571E6 /* Build configuration list for PBXNativeTarget "KittenViewer" */;
@@ -141,11 +230,21 @@
 			projectRoot = "";
 			targets = (
 				EF1DAFBF16164377004571E6 /* KittenViewer */,
+				EF127B8E162144BE00056BDE /* KittenViewerTest */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		EF127B8C162144BE00056BDE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				688ACD77EF065923DF4063CD /* InfoPlist.strings in Resources */,
+				688AC7095F1E9712DB434DEB /* KittenViewerTest-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EF1DAFBE16164377004571E6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -156,7 +255,36 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		EF127B8D162144BE00056BDE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		EF127B8A162144BE00056BDE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				688ACC06D1C81AB4DCDAC140 /* KittenViewerTest.m in Sources */,
+				688AC0DEEA2DC88014FC46E4 /* TaskManagerTest.m in Sources */,
+				EF127BAA162146EA00056BDE /* FetchImageTask.m in Sources */,
+				EF127BAB162146EA00056BDE /* Task.m in Sources */,
+				EF127BAC162146EA00056BDE /* TaskManager.m in Sources */,
+				688ACC8F751ED48652080DB6 /* BlockRunnerTask.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EF1DAFBC16164377004571E6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -165,12 +293,24 @@
 				EF1DAFD516164377004571E6 /* AppDelegate.m in Sources */,
 				EF1DAFD816164377004571E6 /* KittenTableViewController.m in Sources */,
 				688AC29691091EB782D3825E /* KittenViewCell.m in Sources */,
+				688AC0E2A9C33BE5D9243011 /* TaskManager.m in Sources */,
+				688AC4AEBC0EBF1B9DDB29F8 /* Task.m in Sources */,
+				688ACFA6A92E2F7428098784 /* FetchImageTask.m in Sources */,
+				688ACC1D3E3F0F3526F63EDC /* CustomCacheDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		688ACDCF12DE950C28A494BC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				688AC06B757AC130D805D84E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		EF1DAFCD16164377004571E6 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -182,6 +322,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		EF127B9E162144BE00056BDE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KittenViewerTest/KittenViewerTest-Prefix.pch";
+				INFOPLIST_FILE = "KittenViewerTest/KittenViewerTest-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		EF127B9F162144BE00056BDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "KittenViewerTest/KittenViewerTest-Prefix.pch";
+				INFOPLIST_FILE = "KittenViewerTest/KittenViewerTest-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
 		EF1DAFDC16164377004571E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -250,6 +430,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		EF127BA0162144BE00056BDE /* Build configuration list for PBXNativeTarget "KittenViewerTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF127B9E162144BE00056BDE /* Debug */,
+				EF127B9F162144BE00056BDE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		EF1DAFBA16164376004571E6 /* Build configuration list for PBXProject "KittenViewer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -266,6 +455,7 @@
 				EF1DAFE016164377004571E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

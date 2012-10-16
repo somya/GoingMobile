@@ -1,0 +1,8 @@
+//
+// Prefix header for all source files of the 'KittenViewerTest' target in the 'KittenViewerTest' project
+//
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+#endif
