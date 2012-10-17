@@ -43,9 +43,9 @@ public class MainActivity extends Activity
 
         Random r = new Random(  );
 
-        String uriString = "http://lorempixel.com/320/200/people/" + r.nextInt( 10 );
+        String uriString = "img" + r.nextInt( 2 );
         Log.d( "MainActivity.onResume", "uriString = " + uriString );
 
-        m_mainImage.setImageURI( Uri.parse( uriString ) );
+        m_mainImage.setImageResource( getResources().getIdentifier( uriString, "drawable", "com.s3mobileapps.memorydemo" ) );
     }
 }
