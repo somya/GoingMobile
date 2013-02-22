@@ -17,3 +17,6 @@ profile
 *.idea
 out/
 gen/
+bin/
+obj/
+*.userprefs
