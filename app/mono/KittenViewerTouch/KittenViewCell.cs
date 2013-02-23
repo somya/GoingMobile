@@ -9,8 +9,8 @@ namespace KittenViewerTouch
 {
 	public class KittenViewCell :  UITableViewCell
 	{
-		public UIImageView LeftImage { get; set; }
-		public UIImageView RightImage { get; set; }
+		public UIImageViewFromUrl LeftImage { get; set; }
+		public UIImageViewFromUrl RightImage { get; set; }
 
 		public string LeftUrl { get; set; }
 		public string RightUrl { get; set; }
@@ -23,8 +23,8 @@ namespace KittenViewerTouch
 
 		public KittenViewCell( UITableViewCellStyle @default, string cellIdentifier ) : base( @default, cellIdentifier)
 		{
-			LeftImage = new UIImageView( emptyImage);
-			RightImage = new UIImageView( emptyImage);
+			LeftImage = new UIImageViewFromUrl( emptyImage);
+			RightImage = new UIImageViewFromUrl( emptyImage);
 
 			this.ContentView.Add(LeftImage);
 			this.ContentView.Add(RightImage);
@@ -54,15 +54,19 @@ namespace KittenViewerTouch
 			LoadImage(RightImage);
 		}
 
-		private void LoadImage(UIImageView imageView)
+		private void LoadImage(UIImageViewFromUrl imageView)
 		{
 			string url = string.Format( "http://placekitten.com/{0}/{1}", imageView.Bounds.Width, imageView.Bounds.Height );
+			imageView.Url = url;
 
 			WebClient client = new WebClient();
 
 			client.DownloadDataCompleted += (object sender, DownloadDataCompletedEventArgs e) => {
-				var image = new UIImage(NSData.FromArray(e.Result));
-				InvokeOnMainThread( () => imageView.Image = image) ;
+				if (imageView.Url == url)
+				{
+					var image = new UIImage(NSData.FromArray(e.Result));
+					InvokeOnMainThread( () => imageView.Image = image) ;
+				}
 			};
 
 			client.DownloadDataAsync(new Uri(url));
