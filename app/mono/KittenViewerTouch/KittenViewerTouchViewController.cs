@@ -26,9 +26,10 @@ namespace KittenViewerTouch
             base.ViewDidLoad( );
 			
             // Perform any additional setup after loading the view, typically from a nib.
-//            this.TableView.SeparatorStyle =  UITableViewCellSeparatorStyle.None;
+            this.TableView.SeparatorStyle =  UITableViewCellSeparatorStyle.None;
             Title = "Kittens";
 			TableView.Source = new KittenTableSource();
+			TableView.BackgroundColor = UIColor.Black;
            
         }
 		

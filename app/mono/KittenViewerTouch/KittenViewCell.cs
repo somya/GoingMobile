@@ -29,7 +29,7 @@ namespace KittenViewerTouch
 			this.ContentView.Add(LeftImage);
 			this.ContentView.Add(RightImage);
 
-			this.BackgroundColor = UIColor.Black;
+
 		}
 
 		public override void PrepareForReuse()
