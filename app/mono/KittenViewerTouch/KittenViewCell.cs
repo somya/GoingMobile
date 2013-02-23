@@ -59,7 +59,14 @@ namespace KittenViewerTouch
 			string url = string.Format( "http://placekitten.com/{0}/{1}", imageView.Bounds.Width, imageView.Bounds.Height );
 
 			WebClient client = new WebClient();
-			imageView.Image = new UIImage(NSData.FromArray(client.DownloadData(url)));
+
+			client.DownloadDataCompleted += (object sender, DownloadDataCompletedEventArgs e) => {
+				var image = new UIImage(NSData.FromArray(e.Result));
+				InvokeOnMainThread( () => imageView.Image = image) ;
+			};
+
+			client.DownloadDataAsync(new Uri(url));
+
 		}
 	}
 }
