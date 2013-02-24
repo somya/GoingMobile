@@ -93,6 +93,8 @@
     </Compile>
     <Compile Include="KittenViewCell.cs" />
     <Compile Include="KittenTableSource.cs" />
+    <Compile Include="UIImageViewFromUrl.cs" />
+    <Compile Include="TaskManager.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
