@@ -13,7 +13,7 @@ namespace KittenViewerTouch
 		static int MAX_THREADS = 0;
 		static Stack<Task> pendingTasks;
 		static bool cancel;
-		static SemaphoreSlim jobSemaphore;
+//		static SemaphoreSlim jobSemaphore;
 		static SemaphoreSlim dataSemaphore;
 
 		
@@ -22,8 +22,8 @@ namespace KittenViewerTouch
 			pendingTasks = new Stack<Task>();
 			
 			int cpuCount = Environment.ProcessorCount;
-			MAX_THREADS = 2;//cpuCount * 2;
-			jobSemaphore = new SemaphoreSlim( MAX_THREADS );
+			MAX_THREADS = cpuCount * 2;
+//			jobSemaphore = new SemaphoreSlim( MAX_THREADS );
 			dataSemaphore = new SemaphoreSlim( 0 );
 
 
@@ -37,7 +37,7 @@ namespace KittenViewerTouch
 					while ( true )
 					{
 						dataSemaphore.Wait( );
-						jobSemaphore.Wait();
+//						jobSemaphore.Wait();
 						Task task = null;
 						if ( pendingTasks.Count > 0 )
 						{
@@ -83,7 +83,7 @@ namespace KittenViewerTouch
 			}
 			finally
 			{
-				jobSemaphore.Release();
+//				jobSemaphore.Release();
 			}
 		}
 	}

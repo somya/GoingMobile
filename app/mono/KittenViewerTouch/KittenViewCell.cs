@@ -60,16 +60,17 @@ namespace KittenViewerTouch
 		private void LoadImage(UIImageViewFromUrl imageView)
 		{
 
-			imageView.Url =  string.Format( "http://placekitten.com/{0}/{1}", imageView.Bounds.Width * 2, imageView.Bounds.Height * 2 );
+			imageView.Url =  string.Format( "http://placekitten.com/{0}/{1}", imageView.Bounds.Width , imageView.Bounds.Height  );
 			var row = this.Row;
 			var task = new Task<UIImage>( (url) => 
 			{
 
-				Console.WriteLine( "loading image for Row ={0}", row );
+
 				if (imageView.Url == url) 
 				{	
 					WebClient client = new WebClient();
 					var image = new UIImage(NSData.FromArray(client.DownloadData( (string)url )));
+					Console.WriteLine( "loading image for Row ={0}", row );
 					return image;
 				}
 				return null;
@@ -84,7 +85,7 @@ namespace KittenViewerTouch
 					if (imageView.Url == (string)t.AsyncState) 
 					{	
 						UIView.Animate( 0.2 , () => {
-							imageView.Alpha = 0;
+							imageView.Alpha = 0.3f;
 						}, () => {
 							UIView.Animate( 0.5 , () => {
 							imageView.Image = t.Result;
