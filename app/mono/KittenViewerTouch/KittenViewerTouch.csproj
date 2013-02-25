@@ -96,4 +96,7 @@
     <Compile Include="UIImageViewFromUrl.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <BundleResource Include="empty.png" />
+  </ItemGroup>
 </Project>
