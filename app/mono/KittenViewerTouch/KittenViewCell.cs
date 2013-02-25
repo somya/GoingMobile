@@ -83,7 +83,15 @@ namespace KittenViewerTouch
 				{
 					if (imageView.Url == (string)t.AsyncState) 
 					{	
-						imageView.Image = t.Result;
+						UIView.Animate( 0.2 , () => {
+							imageView.Alpha = 0;
+						}, () => {
+							UIView.Animate( 0.5 , () => {
+							imageView.Image = t.Result;
+							imageView.Alpha = 1;
+							});
+						});
+						
 					}
 				});
 			});
