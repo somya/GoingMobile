@@ -31,8 +31,6 @@ namespace KittenViewerTouch
 
 			this.ContentView.Add(LeftImage);
 			this.ContentView.Add(RightImage);
-
-
 		}
 
 		public override void PrepareForReuse()
@@ -60,7 +58,7 @@ namespace KittenViewerTouch
 		private void LoadImage(UIImageViewFromUrl imageView)
 		{
 
-			imageView.Url =  string.Format( "http://placekitten.com/{0}/{1}", imageView.Bounds.Width * 2, imageView.Bounds.Height * 2 );
+			imageView.Url =  string.Format( "http://placekitten.com/{0}/{1}", imageView.Bounds.Width , imageView.Bounds.Height  );
 			var row = this.Row;
 			var task = new Task<UIImage>( (url) => 
 			{

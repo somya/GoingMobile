@@ -22,7 +22,7 @@ namespace KittenViewerTouch
 			pendingTasks = new Stack<Task>();
 			
 			int cpuCount = Environment.ProcessorCount;
-			MAX_THREADS = 2;//cpuCount * 2;
+			MAX_THREADS = cpuCount * 2;
 			jobSemaphore = new SemaphoreSlim( MAX_THREADS );
 			dataSemaphore = new SemaphoreSlim( 0 );
 

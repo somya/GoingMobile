@@ -97,4 +97,7 @@
     <Compile Include="TaskManager.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <BundleResource Include="empty.png" />
+  </ItemGroup>
 </Project>
