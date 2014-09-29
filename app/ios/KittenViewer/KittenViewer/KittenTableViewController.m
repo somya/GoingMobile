@@ -78,7 +78,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	return 150 + (arc4random() % (int) 150);
+	return 125 + (arc4random() % (int) 50);
 }
 
 @end
