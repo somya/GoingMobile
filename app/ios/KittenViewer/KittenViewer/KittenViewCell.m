@@ -63,11 +63,11 @@ int counter = 0;
 
 - (void)loadImages
 {
-	CGFloat maxX = self.contentView.bounds.size.width;
+	CGFloat maxX = self.bounds.size.width;
 	CGRect left;
 	CGRect right;
 	u_int32_t random_width = 60 + (arc4random() % ((int) maxX - 120));
-	CGRectDivide( self.contentView.bounds, &left, &right, random_width, CGRectMinXEdge );
+	CGRectDivide( self.bounds, &left, &right, random_width, CGRectMinXEdge );
 
 	self.leftKittenImageView.frame = CGRectInset( left, 1, 1 );
 	self.rightKittenImageView.frame = CGRectInset( right, 1, 1 );
